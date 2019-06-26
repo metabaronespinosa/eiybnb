@@ -2,10 +2,10 @@
  * COMMON WEBPACK CONFIGURATION
  */
 
-const path = require('path');
-const webpack = require('webpack');
+const path = require('path')
+const webpack = require('webpack')
 
-process.noDeprecation = true;
+process.noDeprecation = true
 
 module.exports = (options) => ({
   mode: options.mode,
@@ -93,4 +93,4 @@ module.exports = (options) => ({
       minChunks: 2
     }
   }
-});
+})

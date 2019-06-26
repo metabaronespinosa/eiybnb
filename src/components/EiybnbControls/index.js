@@ -1,6 +1,7 @@
 import React from 'react'
 
 import WeatherIcons from 'components/WeatherIcons'
+import PlacesBox from 'components/PlacesBox'
 import SearchBar from './SearchBar'
 import './styles.scss'
 
@@ -10,6 +11,7 @@ export default class EiybnbControls extends React.PureComponent {
       <div className="eiybnb-controls-container">
         <SearchBar />
         <WeatherIcons />
+        <PlacesBox />
       </div>
     )
   }

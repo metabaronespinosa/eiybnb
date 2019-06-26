@@ -1,0 +1,67 @@
+@import 'styles/theme';
+
+.places-box-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+
+  .place {
+    height: 150px;
+    margin-bottom: 15px;
+    border-radius: $borderRadius;
+    box-shadow: 2px 2px 4px 0px lighten($mainColor, 30%);
+    display: flex;
+    position: relative;
+
+    .content {
+      padding: 15px 10px;
+      width: calc(100% - 200px);
+      color: $mainColor;
+
+      p:first-child {
+        font-size: 22px;
+        line-height: 7px;
+      }
+
+      span {
+        font-size: 14px;
+        color: lighten($mainColor, 30%);
+      }
+
+      .weather-next-week {
+        margin-top: 59px;
+        color: #adadad;
+        font-size: 14px;
+
+        span {
+          font-size: 20px;
+          margin-left: 10px;
+        }
+      }
+    }
+
+    .thumb {
+      width: 220px;
+      height: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .maps-button {
+      position: absolute;
+      right: 10px;
+      top: 15px;
+      padding: 0px;
+      border: none;
+      background-color: #fff;
+
+      svg {
+        zoom: 3;
+
+        path {
+          color: $secondaryColor;
+        }
+      }
+    }
+  }
+}

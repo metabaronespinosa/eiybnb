@@ -1,3 +1,5 @@
+@import 'styles/theme';
+
 $cloudGray: #ccc;
 $white: #fff;
 $sunYellow: #fbf50e;
@@ -8,6 +10,9 @@ $sunYellow: #fbf50e;
   height: 10em;
   font-size: 1em;
   zoom: 0.4;
+  border: none;
+  background: none;
+  padding: 0;
 }
 
 .cloud {
@@ -280,10 +285,11 @@ $sunYellow: #fbf50e;
   padding: 0 20px 20px;
 
   h3 {
-    font-size: 16px;
+    font-size: 20px;
     text-align: center;
     font-weight: normal;
     margin: 0px;
+    color: $mainColor
   }
 
   .items {
@@ -293,10 +299,10 @@ $sunYellow: #fbf50e;
 
     & > * {
       flex: 1 0 30%;
-      border-radius: 7px;
+      border-radius: $borderRadius;
 
       &:hover {
-        box-shadow: 1px 1px 4px 0px #7373737d;
+        border: 4px solid lighten($mainColor, 30%);
       }
     }
   }
