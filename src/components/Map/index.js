@@ -2,6 +2,7 @@ import React from 'react'
 import ReactMapGL, { FlyToInterpolator } from 'react-map-gl'
 
 import 'mapbox-gl/dist/mapbox-gl.css'
+import './styles.scss'
 
 export default class Map extends React.PureComponent {
   state = {
