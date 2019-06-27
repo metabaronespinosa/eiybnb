@@ -13,6 +13,8 @@
   display: block;
   margin: 0 auto;
   height: 85px;
+  position: relative;
+  z-index: 3;
 
   .mapboxgl-ctrl-geocoder {
     width: 100%;

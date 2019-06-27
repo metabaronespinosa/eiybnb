@@ -15,6 +15,10 @@ import saga from './saga'
 import './style.scss'
 
 class HomePage extends React.PureComponent {
+  state = {
+    selectedCategory: 'sunny'
+  }
+
   geocoderRef = React.createRef()
 
   componentDidMount() {
@@ -24,12 +28,23 @@ class HomePage extends React.PureComponent {
     getPlaceWeatherForecast(currentPlace.center)
   }
 
+  onSelectCategory = (selectedCategory) => {
+    this.setState({
+      selectedCategory
+    })
+  }
+
   render() {
     const { currentPlace } = this.props
+    const { selectedCategory } = this.state
 
     return (
       <div className="app-container">
-        <EiybnbControls geocoderRef={this.geocoderRef} />
+        <EiybnbControls
+          geocoderRef={this.geocoderRef}
+          onSelectCategory={this.onSelectCategory}
+          selectedCategory={selectedCategory}
+        />
         <Map geocoderRef={this.geocoderRef} />
         <PlaceBox {...currentPlace} />
       </div>
