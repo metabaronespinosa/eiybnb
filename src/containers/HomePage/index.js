@@ -14,23 +14,24 @@ import reducer from './reducer'
 import saga from './saga'
 import './style.scss'
 
-const DEFAULT_CENTER = [19.3690477, -99.1792873]
-
 class HomePage extends React.PureComponent {
   geocoderRef = React.createRef()
 
   componentDidMount() {
+    const { currentPlace } = this.props
     const { getPlaceWeatherForecast } = this.props
 
-    getPlaceWeatherForecast(DEFAULT_CENTER)
+    getPlaceWeatherForecast(currentPlace.center)
   }
 
   render() {
+    const { currentPlace } = this.props
+
     return (
       <div className="app-container">
         <EiybnbControls geocoderRef={this.geocoderRef} />
         <Map geocoderRef={this.geocoderRef} />
-        <PlaceBox />
+        <PlaceBox {...currentPlace} />
       </div>
     )
   }

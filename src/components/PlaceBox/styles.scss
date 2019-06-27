@@ -13,8 +13,7 @@
   display: flex;
 
   .content {
-    padding: 15px 10px;
-    width: calc(100% - 200px);
+    padding: 15px 15px;
     color: $mainColor;
 
     p:first-child {
@@ -27,15 +26,21 @@
       color: lighten($mainColor, 30%);
     }
 
-    .weather-next-week {
-      margin-top: 59px;
+    .weather {
       color: #adadad;
       font-size: 14px;
+      font-weight: bold;
+      line-height: 20px;
 
       span {
         font-size: 20px;
         margin-left: 10px;
       }
+    }
+
+    .weather-description {
+      margin-top: 10px;
+      text-transform: uppercase;
     }
   }
 

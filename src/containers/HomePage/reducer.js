@@ -4,7 +4,11 @@ import {
 } from './constants'
 
 const initialState = {
-  currentPlace: null,
+  currentPlace: {
+    name: 'Mexico City',
+    location: 'Mexico',
+    center: [19.3690477, -99.1792873]
+  },
   loading: false
 }
 
@@ -18,7 +22,10 @@ function homeReducer(state = initialState, action) {
     case ON_GET_PLACE_WEATHER_FORECAST_SUCCESS:
       return {
         ...state,
-        currentPlace: action.payload,
+        currentPlace: {
+          ...state.currentPlace,
+          ...action.payload
+        },
         loading: false
       }
     default:

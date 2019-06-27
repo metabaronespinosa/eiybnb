@@ -10,7 +10,6 @@ const IMAGES = {
 const Place = ({
   name,
   location,
-  weatherForecast,
   center
 }) => (
   <div className="place">
@@ -19,10 +18,9 @@ const Place = ({
       <p>{name}</p>
       <span>{location}</span>
       <br />
-      <div className="weather-next-week">Weather next week <span>{weatherForecast}</span></div>
     </div>
     <button className="maps-button" type="button" onClick={() => console.log(center)}>
-      <MdPlace />
+      Get info
     </button>
   </div>
 )

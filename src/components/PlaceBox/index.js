@@ -6,8 +6,10 @@ const PlaceBox = ({
   name,
   location,
   weatherToday,
-  weatherForecastNextWeek
+  weatherForecastNextWeek,
+  ...props
 }) => {
+  console.log(props)
   if (!name) return null
 
   return (
@@ -16,8 +18,10 @@ const PlaceBox = ({
         <p>{name}</p>
         <span>{location}</span>
         <br />
-        <div className="weather-next-week">Weather today <span>{weatherToday}</span></div>
-        <div className="weather-next-week">Weather next week <span>{weatherForecastNextWeek}</span></div>
+        <br />
+        <div className="weather">Weather today <span>{props.temp} °C</span></div>
+        <div className="weather">Average weather next week <span>{props.temp} °C</span></div>
+        <div className="weather-description">{props.description}</div>
       </div>
     </div>
   )

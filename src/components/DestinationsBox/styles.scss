@@ -50,18 +50,15 @@
     .maps-button {
       position: absolute;
       right: 10px;
-      top: 15px;
-      padding: 0px;
+      bottom: 15px;
+      padding: 10px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 14px;
+      background-color: $secondaryColor;
+      border-radius: $borderRadius;
       border: none;
-      background-color: #fff;
-
-      svg {
-        zoom: 3;
-
-        path {
-          color: $secondaryColor;
-        }
-      }
+      cursor: pointer;
     }
   }
 }
