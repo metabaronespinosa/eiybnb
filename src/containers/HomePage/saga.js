@@ -20,7 +20,7 @@ const delay = (time) => new Promise((resolve) => setTimeout(() => resolve(true),
 function* getPlaceWeatherForecast({ payload }) {
   weather.setCoordinate(...payload.center)
   const result = yield call(getWeather)
-  yield call(delay, 1000)
+  yield call(delay, 1500)
   yield put(onGetPlaceWeatherForecastSuccess({ ...result, ...payload }))
 }
 

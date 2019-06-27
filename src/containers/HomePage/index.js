@@ -45,7 +45,7 @@ class HomePage extends React.PureComponent {
   }
 
   render() {
-    const { currentPlace } = this.props
+    const { currentPlace, loading } = this.props
     const { selectedCategory } = this.state
 
     return (
@@ -56,8 +56,12 @@ class HomePage extends React.PureComponent {
           selectedCategory={selectedCategory}
           onGetPlaceInfo={this.onGetPlaceInfo}
         />
-        <Map geocoderRef={this.geocoderRef} onSearchResult={this.onSearchResult} currentPlace={currentPlace} />
-        <PlaceBox {...currentPlace} />
+        <Map
+          geocoderRef={this.geocoderRef}
+          onSearchResult={this.onSearchResult}
+          currentPlace={currentPlace}
+        />
+        <PlaceBox {...currentPlace} loading={loading} />
       </div>
     )
   }
