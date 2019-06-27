@@ -1,0 +1,48 @@
+@import 'styles/theme';
+
+.place-box {
+  position: absolute;
+  width: 350px;
+  height: 170px;
+  right: 10px;
+  top: 10px;
+  z-index: 10;
+  background: #fff;
+  border-radius: $borderRadius;
+  box-shadow: 2px 2px 4px 0px lighten($mainColor, 30%);
+  display: flex;
+
+  .content {
+    padding: 15px 10px;
+    width: calc(100% - 200px);
+    color: $mainColor;
+
+    p:first-child {
+      font-size: 22px;
+      line-height: 7px;
+    }
+
+    span {
+      font-size: 14px;
+      color: lighten($mainColor, 30%);
+    }
+
+    .weather-next-week {
+      margin-top: 59px;
+      color: #adadad;
+      font-size: 14px;
+
+      span {
+        font-size: 20px;
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .thumb {
+    width: 220px;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}

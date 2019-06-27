@@ -14,6 +14,16 @@
   margin: 0 auto;
   height: 85px;
 
+  .mapboxgl-ctrl-geocoder {
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+
+    .suggestions {
+      z-index: 10000;
+    }
+  }
+
 
   input {
     margin: 0 auto;
@@ -51,12 +61,16 @@
   svg {
     width: 38px;
     height: 33px;
-    position: relative;
-    top: -38px;
+    position: absolute;
+    top: 6px;
     left: calc(100% - 41px);
 
     path {
       color: $secondaryColor;
+    }
+
+    &.mapboxgl-ctrl-geocoder--icon-close {
+      display: none;
     }
   }
 

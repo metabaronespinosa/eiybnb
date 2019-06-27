@@ -1,9 +1,20 @@
 import React from 'react'
 import { MdPlace } from 'react-icons/md'
 
-const Place = ({ image, name, location, weatherForecast, center }) => (
+import acapulco from 'images/acapulco.jpg'
+
+const IMAGES = {
+  acapulco
+}
+
+const Place = ({
+  name,
+  location,
+  weatherForecast,
+  center
+}) => (
   <div className="place">
-    <div className="thumb" style={{ backgroundImage: `url(${image})` }} />
+    <div className="thumb" style={{ backgroundImage: `url(${IMAGES[name.toLowerCase()]})` }} />
     <div className="content">
       <p>{name}</p>
       <span>{location}</span>

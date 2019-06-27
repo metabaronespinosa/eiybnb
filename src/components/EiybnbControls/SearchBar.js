@@ -1,13 +1,10 @@
 import React from 'react'
-import { MdSearch } from 'react-icons/md'
 
+import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css'
 import './styles.scss'
 
-const SearchBar = () => (
-  <form className="search-container">
-    <input type="text" placeholder="Search for a place" />
-    <MdSearch />
-  </form>
+const SearchBar = ({ geocoderRef }) => (
+  <div className="search-container" ref={geocoderRef} />
 )
 
 export default SearchBar
