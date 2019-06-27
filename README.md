@@ -11,6 +11,6 @@
 ## Quick start
 
 1. Clone this repo using `git clone https://github.com/metabaronespinosa/eiybnb.git`
-2. Move to the appropriate directory: `cd react-redux-boilerplate`.<br />
+2. Move to the appropriate directory: `cd eiybnb`.<br />
 3. Run `yarn` or `npm install` to install dependencies.<br />
 4. Run `npm start` then go to `http://localhost:3000`.
