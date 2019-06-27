@@ -2,6 +2,7 @@
   "name": "eiybnb",
   "version": "1.0.0",
   "description": "Search the most beautiful places with the best weather.",
+  "homepage": "http://metabaronespinosa.github.io/eiybnb",
   "repository": {
     "type": "git",
     "url": ""
@@ -23,7 +24,9 @@
     "pretest": "npm run test:clean && npm run lint",
     "test": "cross-env NODE_ENV=test jest --coverage",
     "test:clean": "rimraf ./coverage",
-    "test:watch": "cross-env NODE_ENV=test jest --watchAll"
+    "test:watch": "cross-env NODE_ENV=test jest --watchAll",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
@@ -33,6 +36,7 @@
     "cross-env": "5.2.0",
     "express": "4.17.1",
     "fontfaceobserver": "2.1.0",
+    "gh-pages": "^2.0.1",
     "history": "4.9.0",
     "hoist-non-react-statics": "3.3.0",
     "invariant": "2.2.4",
