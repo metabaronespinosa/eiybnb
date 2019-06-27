@@ -7,13 +7,18 @@ import './styles.scss'
 
 export default class EiybnbControls extends React.PureComponent {
   render() {
-    const { geocoderRef, selectedCategory, onSelectCategory } = this.props
+    const {
+      geocoderRef,
+      selectedCategory,
+      onSelectCategory,
+      onGetPlaceInfo
+    } = this.props
 
     return (
       <div className="eiybnb-controls-container">
         <SearchBar geocoderRef={geocoderRef} />
         <WeatherIcons selectedCategory={selectedCategory} onSelectCategory={onSelectCategory} />
-        <DestinationsBox />
+        <DestinationsBox selectedCategory={selectedCategory} onGetPlaceInfo={onGetPlaceInfo} />
       </div>
     )
   }

@@ -5,11 +5,8 @@ import './styles.scss'
 const PlaceBox = ({
   name,
   location,
-  weatherToday,
-  weatherForecastNextWeek,
   ...props
 }) => {
-  console.log(props)
   if (!name) return null
 
   return (

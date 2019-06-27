@@ -25,13 +25,23 @@ class HomePage extends React.PureComponent {
     const { currentPlace } = this.props
     const { getPlaceWeatherForecast } = this.props
 
-    getPlaceWeatherForecast(currentPlace.center)
+    getPlaceWeatherForecast(currentPlace)
+  }
+
+  onGetPlaceInfo = (place) => {
+    const { getPlaceWeatherForecast } = this.props
+
+    getPlaceWeatherForecast(place)
   }
 
   onSelectCategory = (selectedCategory) => {
     this.setState({
       selectedCategory
     })
+  }
+
+  onSearchResult = ({ result }) => {
+    console.log('aljshdlajshd', result)
   }
 
   render() {
@@ -44,8 +54,9 @@ class HomePage extends React.PureComponent {
           geocoderRef={this.geocoderRef}
           onSelectCategory={this.onSelectCategory}
           selectedCategory={selectedCategory}
+          onGetPlaceInfo={this.onGetPlaceInfo}
         />
-        <Map geocoderRef={this.geocoderRef} />
+        <Map geocoderRef={this.geocoderRef} onSearchResult={this.onSearchResult} currentPlace={currentPlace} />
         <PlaceBox {...currentPlace} />
       </div>
     )

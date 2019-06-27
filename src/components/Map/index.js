@@ -20,6 +20,26 @@ export default class Map extends React.PureComponent {
 
   mapRef = React.createRef();
 
+  componentDidUpdate(prevProps) {
+    const { currentPlace } = this.props
+    const { viewport } = this.state
+
+    if (currentPlace.name !== prevProps.currentPlace.name) {
+      const [latitude, longitude] = currentPlace.center
+
+      this.setState({ // eslint-disable-line react/no-did-update-set-state
+        viewport: {
+          ...viewport,
+          longitude,
+          latitude,
+          zoom: 10,
+          transitionDuration: 1000,
+          transitionInterpolator: new FlyToInterpolator(),
+        }
+      })
+    }
+  }
+
   onViewportChange = (viewport) => {
     this.setState({ viewport })
   }
@@ -37,13 +57,9 @@ export default class Map extends React.PureComponent {
     })
   }
 
-  handleOnResult = ({ result }) => {
-    console.log('ljashdlkajsd', result)
-  }
-
   render() {
     const { viewport } = this.state
-    const { geocoderRef } = this.props
+    const { geocoderRef, onSearchResult } = this.props
 
     return (
       <div className="map-container">
@@ -58,7 +74,7 @@ export default class Map extends React.PureComponent {
           <Geocoder
             mapRef={this.mapRef}
             containerRef={geocoderRef}
-            onResult={this.handleOnResult}
+            onResult={onSearchResult}
             mapboxApiAccessToken={TOKEN}
             placeholder="Search for a destination"
             countries="mx"

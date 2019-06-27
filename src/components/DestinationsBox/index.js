@@ -8,7 +8,6 @@ const places = {
     {
       name: 'Acapulco',
       location: 'Guerrero, Mexico',
-      weatherForecast: '+17 °C',
       center: [16.857116, -99.837575]
     }
   ]
@@ -16,9 +15,11 @@ const places = {
 
 class DestinationsBox extends React.PureComponent {
   render() {
+    const { onGetPlaceInfo, selectedCategory } = this.props
+
     return (
       <div className="places-box-container">
-        {places.sunny.map((place) => <Place key={place.name} {...place} />)}
+        {places[selectedCategory].map((place) => <Place key={place.name} {...place} onGetPlaceInfo={onGetPlaceInfo} />)}
       </div>
     )
   }

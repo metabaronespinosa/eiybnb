@@ -1,5 +1,4 @@
 import React from 'react'
-import { MdPlace } from 'react-icons/md'
 
 import acapulco from 'images/acapulco.jpg'
 
@@ -8,18 +7,17 @@ const IMAGES = {
 }
 
 const Place = ({
-  name,
-  location,
-  center
+  onGetPlaceInfo,
+  ...place
 }) => (
   <div className="place">
-    <div className="thumb" style={{ backgroundImage: `url(${IMAGES[name.toLowerCase()]})` }} />
+    <div className="thumb" style={{ backgroundImage: `url(${IMAGES[place.name.toLowerCase()]})` }} />
     <div className="content">
-      <p>{name}</p>
-      <span>{location}</span>
+      <p>{place.name}</p>
+      <span>{place.location}</span>
       <br />
     </div>
-    <button className="maps-button" type="button" onClick={() => console.log(center)}>
+    <button className="maps-button" type="button" onClick={() => onGetPlaceInfo(place)}>
       Get info
     </button>
   </div>

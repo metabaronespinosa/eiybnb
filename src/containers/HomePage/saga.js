@@ -15,10 +15,13 @@ const getWeather = () => new Promise((resolve, reject) => {
   })
 })
 
+const delay = (time) => new Promise((resolve) => setTimeout(() => resolve(true), time))
+
 function* getPlaceWeatherForecast({ payload }) {
-  weather.setCoordinate(...payload)
+  weather.setCoordinate(...payload.center)
   const result = yield call(getWeather)
-  yield put(onGetPlaceWeatherForecastSuccess(result))
+  yield call(delay, 1000)
+  yield put(onGetPlaceWeatherForecastSuccess({ ...result, ...payload }))
 }
 
 export default function* homeSagas() {
