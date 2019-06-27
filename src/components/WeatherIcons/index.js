@@ -87,12 +87,12 @@ class WeatherIcons extends React.PureComponent {
         <div className="weather-icons-navigation-menu">
           <h3>What is your favorite weather?</h3>
           <div className="items">
+            <Sunny selected={selectedCategory} onSelectCategory={onSelectCategory} />
+            <Rainy selected={selectedCategory} onSelectCategory={onSelectCategory} />
+            <Flurries selected={selectedCategory} onSelectCategory={onSelectCategory} />
             <SunShower selected={selectedCategory} onSelectCategory={onSelectCategory} />
             <ThunderStorm selected={selectedCategory} onSelectCategory={onSelectCategory} />
             <Cloudy selected={selectedCategory} onSelectCategory={onSelectCategory} />
-            <Flurries selected={selectedCategory} onSelectCategory={onSelectCategory} />
-            <Sunny selected={selectedCategory} onSelectCategory={onSelectCategory} />
-            <Rainy selected={selectedCategory} onSelectCategory={onSelectCategory} />
           </div>
         </div>
       </React.Fragment>

@@ -1,9 +1,17 @@
 import React from 'react'
 
 import acapulco from 'images/acapulco.jpg'
+import cancun from 'images/cancun.jpg'
+import vallarta from 'images/vallarta.jpg'
+import nevado from 'images/nevado.jpg'
+import cdmx from 'images/cdmx.jpg'
 
 const IMAGES = {
-  acapulco
+  acapulco,
+  cancun,
+  vallarta,
+  nevado,
+  cdmx
 }
 
 const Place = ({

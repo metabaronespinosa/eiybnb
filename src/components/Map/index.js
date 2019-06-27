@@ -14,7 +14,8 @@ export default class Map extends React.PureComponent {
       height: '100vh',
       latitude: 19.3690477,
       longitude: -99.1792873,
-      zoom: 5
+      zoom: 5,
+      pitch: 48
     }
   }
 

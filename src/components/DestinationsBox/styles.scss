@@ -5,6 +5,12 @@
   display: flex;
   flex-direction: column;
 
+  & > p {
+    font-size: 18px;
+    color: $mainColor;
+    text-align: center;
+  }
+
   .place {
     height: 150px;
     margin-bottom: 15px;
@@ -12,6 +18,11 @@
     box-shadow: 2px 2px 4px 0px lighten($mainColor, 30%);
     display: flex;
     position: relative;
+    transition: all 0.3s linear;
+
+    &:hover {
+      box-shadow: 3px 3px 5px 0px lighten($mainColor, 30%);
+    }
 
     .content {
       padding: 15px 10px;
