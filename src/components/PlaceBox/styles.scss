@@ -15,8 +15,11 @@
   .content {
     padding: 15px 15px;
     color: $mainColor;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-    p:first-child {
+    p {
       font-size: 22px;
       line-height: 7px;
     }
@@ -39,7 +42,6 @@
     }
 
     .weather-description {
-      margin-top: 10px;
       text-transform: uppercase;
     }
 

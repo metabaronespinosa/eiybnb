@@ -41,7 +41,14 @@ class HomePage extends React.PureComponent {
   }
 
   onSearchResult = ({ result }) => {
-    console.log('aljshdlajshd', result)
+    const { getPlaceWeatherForecast } = this.props
+    const [lon, lat] = result.geometry.coordinates
+    const place = {
+      name: result.text,
+      location: result.place_name,
+      center: [lat, lon]
+    }
+    getPlaceWeatherForecast(place)
   }
 
   render() {
