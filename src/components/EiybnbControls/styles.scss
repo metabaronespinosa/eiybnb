@@ -24,6 +24,12 @@
     .suggestions {
       z-index: 10000;
     }
+
+
+    .mapboxgl-ctrl-geocoder--button {
+      right: 30px;
+      top: -2px;
+    }
   }
 
 
@@ -69,10 +75,6 @@
 
     path {
       color: $secondaryColor;
-    }
-
-    &.mapboxgl-ctrl-geocoder--icon-close {
-      display: none;
     }
   }
 

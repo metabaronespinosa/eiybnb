@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactMapGL, { FlyToInterpolator } from 'react-map-gl'
 import Geocoder from 'react-map-gl-geocoder'
+import { debounce } from 'lodash'
 
 import 'mapbox-gl/dist/mapbox-gl.css'
 import './styles.scss'
@@ -20,6 +21,21 @@ export default class Map extends React.PureComponent {
   }
 
   mapRef = React.createRef();
+
+  componentDidMount() {
+    const { viewport } = this.state
+
+    window.addEventListener('resize', debounce(() => {
+      this.setState({
+        viewport: {
+          ...viewport,
+          width: '100%',
+          height: '100vh',
+          zoom: 10
+        }
+      })
+    }, 100))
+  }
 
   componentDidUpdate(prevProps) {
     const { currentPlace } = this.props
