@@ -62,6 +62,8 @@ class HomePage extends React.PureComponent {
           onSelectCategory={this.onSelectCategory}
           selectedCategory={selectedCategory}
           onGetPlaceInfo={this.onGetPlaceInfo}
+          currentPlace={currentPlace}
+          loading={loading}
         />
         <Map
           geocoderRef={this.geocoderRef}

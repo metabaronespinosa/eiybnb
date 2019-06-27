@@ -1,3 +1,5 @@
+@import 'styles/theme';
+
 .app-container {
   display: flex;
   flex-direction: row;
@@ -6,5 +8,13 @@
 
   & > * {
     flex: 1;
+  }
+
+  @include sm {
+    flex-direction: column;
+
+    .place-box {
+      display: none;
+    }
   }
 }
